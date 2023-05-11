@@ -1,0 +1,25 @@
+@import "../variables";
+
+.auth-nav {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    padding: 5px 6px;
+    background-color: black;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 100px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  &__item:hover {
+    color: #050801;
+    box-shadow: 0 0 5px $red, 0 0 25px $red, 0 0 50px $red, 0 0 200px $red;
+  }
+}
