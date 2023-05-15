@@ -1,0 +1,30 @@
+.search-form {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 3px solid #febb02;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  top: -20px;
+
+  &__item {
+  }
+
+  &__btn {
+    background-color: #0071c2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(0, 79, 196);
+      transition: 0.8s;
+    }
+  }
+}

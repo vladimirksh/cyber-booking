@@ -1,0 +1,32 @@
+.banner {
+  margin: 20px auto 0;
+  width: 1024px;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__title {
+    color: #fff;
+  }
+
+  &__description {
+    color: #fff;
+  }
+
+  &__btn {
+    background-color: #0071c2;
+    width: 250px;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: #0071c2;
+      transition: 0.8s;
+    }
+  }
+}

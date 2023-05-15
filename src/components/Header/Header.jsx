@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import AuthMenu from "../AuthMenu/AuthMenu";
 import SiteMenu from "../SiteMenu/SiteMenu";
+import Banner from "../Banner/Banner";
 
 function Header(props) {
   return (
@@ -13,6 +14,7 @@ function Header(props) {
       <nav className="header__site-nav">
         <SiteMenu />
       </nav>
+      <Banner />
     </header>
   );
 }

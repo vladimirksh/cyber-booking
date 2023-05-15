@@ -1,7 +1,7 @@
 import React from "react";
 
 function Logo(props) {
-  return <span className="logo">Cyber-Booking</span>;
+  return <span className="logo">Booking</span>;
 }
 
 export default Logo;
