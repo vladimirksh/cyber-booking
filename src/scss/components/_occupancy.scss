@@ -1,0 +1,38 @@
+.occupancy {
+  position: absolute;
+  top: 43px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 16px 0 rgba(26, 26, 26, 0.24);
+  z-index: 2;
+  background-color: white;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 200px;
+    padding: 10px;
+  }
+
+  &__counter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__button {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #0071c2;
+    color: #0071c2;
+    cursor: pointer;
+    background-color: white;
+
+    &:disabled {
+      cursor: not-allowed;
+      border: 2px solid gray;
+      color: gray;
+    }
+  }
+}

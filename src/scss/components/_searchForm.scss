@@ -1,5 +1,5 @@
 .search-form {
-  width: 1024px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 10px;
   box-sizing: border-box;
@@ -13,6 +13,25 @@
   top: -20px;
 
   &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+
+  &__input {
+    border: none;
+  }
+
+  &__text {
+    cursor: pointer;
+    color: #474747;
+  }
+
+  &__date-picker {
+    position: absolute;
+    top: 43px;
+    z-index: 2;
   }
 
   &__btn {

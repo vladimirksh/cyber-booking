@@ -14,28 +14,33 @@ function SiteMenu(props) {
     {
       name: faBed,
       text: "Жилье",
+      path: "/",
     },
     {
       name: faPlane,
       text: "Авиабилеты",
+      path: "/flight",
     },
     {
       name: faCar,
       text: "Аренда машин",
+      path: "/cars",
     },
     {
       name: faBicycle,
       text: "Варианты досуга",
+      path: "/attractions",
     },
     {
       name: faTaxi,
       text: "Такси от/до аэропорта",
+      path: "/taxi",
     },
   ];
 
-  const categorie = categories.map(({ name, text }, i) => (
+  const categorie = categories.map(({ name, text, path }, i) => (
     <li className="site-nav__item" key={i}>
-      <NavLink to="/" className="site-nav__item-link">
+      <NavLink to={path} className="site-nav__item-link">
         <FontAwesomeIcon icon={name} style={{ color: "#fff" }} />
         <span>{text}</span>
       </NavLink>

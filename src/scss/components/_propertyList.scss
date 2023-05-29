@@ -1,0 +1,28 @@
+.propety-list {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__description {
+  }
+
+  &__title {
+    font-size: 14px;
+  }
+
+  &__text {
+    font-size: 12px;
+  }
+}
