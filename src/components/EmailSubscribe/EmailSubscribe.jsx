@@ -7,17 +7,17 @@ function EmailSubscribe(props) {
       <p className="email-subscribe__text">
         Подпишитесь, и мы вышлем вам лучшие предложения
       </p>
-      <div>
+      <form className="email-subscribe__form">
         <input
+          className="email-subscribe__input"
           type="email"
-          autocapitalize="off"
-          required="true"
+          autoCapitalize="off"
+          required={true}
           placeholder="Ваш электронный адрес"
-          title=""
-          value=""
+          // value=""
         />
-        <button>Подписаться</button>
-      </div>
+        <button className="email-subscribe__button">Подписаться</button>
+      </form>
     </div>
   );
 }
