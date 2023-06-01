@@ -11,10 +11,14 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { DateRange } from "react-date-range";
 import { ru } from "date-fns/locale";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 function SearchForm(props) {
+  const navigate = useNavigate();
+
   const [openDr, setOpenDr] = useState(false);
   const [openOption, setOpenOption] = useState(false);
+  const [destination, setDestination] = useState("");
   const [option, setOption] = useState({
     adult: 1,
     children: 0,
@@ -39,6 +43,11 @@ function SearchForm(props) {
       };
     });
   };
+
+  const heandleSearch = () => {
+    navigate("/searchresults", { state: { destination, date, option } });
+  };
+
   return (
     <form className="search-form">
       <div className="search-form__item">
@@ -54,6 +63,7 @@ function SearchForm(props) {
           className="search-form__input"
           type="text"
           placeholder="Куда вы хотите поехать?"
+          onChange={(e) => setDestination(e.target.value)}
         />
       </div>
       <div className="search-form__item">
@@ -77,6 +87,7 @@ function SearchForm(props) {
             moveRangeOnFirstSelection={false}
             ranges={date}
             locale={ru}
+            minDate={new Date()}
           />
         )}
       </div>
@@ -96,7 +107,9 @@ function SearchForm(props) {
         )}
       </div>
       <div className="search-form__item">
-        <button className="search-form__btn">Найти</button>
+        <button className="search-form__btn" onClick={heandleSearch}>
+          Найти
+        </button>
       </div>
     </form>
   );
