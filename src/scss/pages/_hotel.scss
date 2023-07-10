@@ -1,0 +1,98 @@
+.hotel-container {
+  margin: 0 auto;
+  max-width: 1024px;
+
+  &__wraper {
+    margin: 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__title {
+    font-size: 24px;
+  }
+
+  &__address {
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &__distance {
+    font-size: 16px;
+    color: #0071c2;
+    font-weight: 700;
+  }
+
+  &__images {
+    max-width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+  }
+
+  &__img {
+    max-width: 32%;
+    object-fit: cover;
+  }
+
+  &__details {
+    display: flex;
+    padding-top: 15px;
+    gap: 20px;
+  }
+
+  &__texts {
+    flex: 2;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+    p {
+    }
+  }
+
+  &__price {
+    height: max-content;
+    flex: 1;
+    background-color: #e4f4ff;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    span {
+      text-align: center;
+    }
+
+    button {
+      height: 30px;
+      padding: 0 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      background-color: #006ce4;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}

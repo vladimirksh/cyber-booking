@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { DateRange } from "react-date-range";
-import Occupancy from "../Occupancy/Occupancy";
 import { ru } from "date-fns/locale";
 import { format } from "date-fns";
 import { useLocation } from "react-router-dom";
@@ -11,10 +10,18 @@ function ResultsForm() {
 
   const location = useLocation();
   const [destination, setDestination] = useState(
-    (location.state.destination = "Укажите место")
+    location.state.destination || "Куда вы хотите поехать?"
   );
-  const [option, setOption] = useState(location.state.option);
-  const [date, setDate] = useState(location.state.date);
+  const [option, setOption] = useState(
+    location.state.option || { adult: 1, children: 0, room: 1 }
+  );
+  const [date, setDate] = useState(
+    location.state.date || {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    }
+  );
 
   return (
     <form className="results-form">
@@ -63,20 +70,20 @@ function ResultsForm() {
           <span className="results-form__option-description">
             Минимальная цена
           </span>
-          <input className="results-form__option-input" type="number" />
+          <input className="results-form__option-input" type="number" min={0} />
         </div>
         <div className="results-form__option">
           <span className="results-form__option-description">
             Максимальная цена
           </span>
-          <input className="results-form__option-input" type="number" />
+          <input className="results-form__option-input" type="number" min={0} />
         </div>
         <div className="results-form__option">
           <span className="results-form__option-description">Взрослых</span>
           <input
             className="results-form__option-input"
             type="number"
-            placeholder={option.adult}
+            placeholder={option.adult || 1}
             min={1}
           />
         </div>
@@ -85,7 +92,7 @@ function ResultsForm() {
           <input
             className="results-form__option-input"
             type="number"
-            placeholder={option.children}
+            placeholder={option.children || 0}
             min={0}
           />
         </div>
@@ -94,7 +101,7 @@ function ResultsForm() {
           <input
             className="results-form__option-input"
             type="number"
-            placeholder={option.room}
+            placeholder={option.room || 1}
             min={1}
           />
         </div>
