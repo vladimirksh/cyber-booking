@@ -3,12 +3,8 @@ import Header from "../../components/Header/Header";
 import EmailSubscribe from "../../components/EmailSubscribe/EmailSubscribe";
 import Footer from "../../components/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationDot,
-  faCircleArrowLeft,
-  faCircleArrowRight,
-  faCircleXmark,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import Slider from "../../components/Slider/Slider";
 
 function Hotel(props) {
   const [slideNumber, setSlideNumber] = useState(0);
@@ -17,6 +13,26 @@ function Hotel(props) {
   function handleOpenSlider(i) {
     setOpen(true);
     setSlideNumber(i);
+  }
+
+  function handleCloseSlider() {
+    setOpen(false);
+  }
+
+  function handleNextSlide() {
+    if (slideNumber == photos.length - 1) {
+      setSlideNumber(0);
+    } else {
+      setSlideNumber(slideNumber + 1);
+    }
+  }
+
+  function handlePrevSlide() {
+    if (slideNumber == 0) {
+      setSlideNumber(photos.length - 1);
+    } else {
+      setSlideNumber(slideNumber - 1);
+    }
   }
 
   const photos = [
@@ -42,21 +58,14 @@ function Hotel(props) {
   return (
     <>
       <Header />
-      {open && (
-        <div className={`slider `}>
-          <FontAwesomeIcon icon={faCircleXmark} style={{ color: "#0071c2" }} />
-          <FontAwesomeIcon
-            icon={faCircleArrowLeft}
-            style={{ color: "#0071c2" }}
-          />
-          <img src={photos[slideNumber].src} alt="" />
-
-          <FontAwesomeIcon
-            icon={faCircleArrowRight}
-            style={{ color: "#0071c2" }}
-          />
-        </div>
-      )}
+      <Slider
+        open={open}
+        slideNumber={slideNumber}
+        photos={photos}
+        handleCloseSlider={handleCloseSlider}
+        handleNextSlide={handleNextSlide}
+        handlePrevSlide={handlePrevSlide}
+      />
       <main className="hotel-container">
         <div className="hotel-container__wraper">
           <h2 className="hotel-container__title">Aparthotel Stare Miasto</h2>
